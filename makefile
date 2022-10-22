@@ -28,6 +28,7 @@ FILES = ft_memset \
 		ft_toupper \
 		ft_tolower \
 		ft_calloc \
+		ft_substr \
 
 FILES_B = 	ft_lstnew \
 	  		ft_lstadd_front \
