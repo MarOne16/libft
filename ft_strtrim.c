@@ -1,36 +1,33 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_strlcat.c                                       :+:      :+:    :+:   */
+/*   ft_strtrim.c                                       :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: mqaos <mqaos@student.42.fr>                +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2022/10/19 12:51:39 by mqaos             #+#    #+#             */
-/*   Updated: 2022/10/23 22:16:30 by mqaos            ###   ########.fr       */
+/*   Created: 2022/10/22 19:53:37 by mqaos             #+#    #+#             */
+/*   Updated: 2022/10/23 20:31:05 by mqaos            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "libft.h"
 
-size_t	ft_strlcat(char	*dst, const char	*src, size_t n)
+char	*ft_strtrim(char const *s1, char const *set)
 {
-	size_t			i;
-	size_t			s;
-	size_t			d;
+	size_t	i;
+	size_t	u;
+	char	*s2;
 
+	if (s1 == NULL || set == NULL)
+		return (NULL);
 	i = 0;
-	s = ft_strlen(src);
-	if (dst == NULL && n == 0)
-		return (s);
-	d = ft_strlen(dst);
-	if (d > n)
-		return (n + s);
-	while (d + 1 < n && src[i] != '\0')
-	{
-		dst[d] = src[i];
-		d++;
+	u = ft_strlen(s1);
+	while (s1[i] && ft_strchr(set, s1[i]))
 		i++;
-	}
-	dst[d] = '\0';
-	return (ft_strlen(dst) + ft_strlen(src + i));
+	while (s1[u - 1] && ft_strchr(set, s1[u - 1]) && u > i)
+		u--;
+	s2 = (char *)malloc(sizeof(char) * (u + 1 - i));
+	if (s2)
+		ft_strlcpy(s2, s1 + i, u - i + 1);
+	return (s2);
 }

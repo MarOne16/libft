@@ -29,6 +29,8 @@ FILES = ft_memset \
 		ft_tolower \
 		ft_calloc \
 		ft_substr \
+		ft_joinstr \
+		ft_strtrim \
 
 FILES_B = 	ft_lstnew \
 	  		ft_lstadd_front \

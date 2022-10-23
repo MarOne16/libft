@@ -6,7 +6,7 @@
 /*   By: mqaos <mqaos@student.42.fr>                +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/10/22 14:56:46 by mqaos             #+#    #+#             */
-/*   Updated: 2022/10/22 16:20:50 by mqaos            ###   ########.fr       */
+/*   Updated: 2022/10/22 17:53:38 by mqaos            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -17,15 +17,22 @@ char	*ft_substr(char const *s, unsigned int start, size_t len)
 {
 	char	*r;
 	size_t	i;
+	char	*ret;
 
 	if (!s)
+	{
 		return (NULL);
+	}
 	r = malloc(sizeof(char) * len + 1);
 	i = 0;
 	if (!r)
 		return (NULL);
 	if (start >= ft_strlen(s))
-		return (ft_strdup(""));
+	{
+		ret = malloc(1);
+		*ret = '\0';
+		return (ret);
+	}
 	while (i < len && s[i] != '\0')
 	{
 		r[i] = s[start + i];
