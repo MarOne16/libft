@@ -6,19 +6,17 @@
 /*   By: mqaos <mqaos@student.42.fr>                +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/10/24 14:42:55 by mqaos             #+#    #+#             */
-/*   Updated: 2022/10/25 16:59:06 by mqaos            ###   ########.fr       */
+/*   Updated: 2022/10/25 18:30:10 by mqaos            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "libft.h"
-#include <stdio.h>
-#include<string.h>
 
-static	size_t wordC(char const *s, char c)
+size_t word_c(char const *s, char c)
 {
-	size_t	nb;
-	int		i;
-	int		u;
+	size_t nb;
+	int i;
+	int u;
 
 	nb = 0;
 	i = 0;
@@ -39,31 +37,30 @@ static	size_t wordC(char const *s, char c)
 
 char	**ft_split(char const *s, char c)
 {
-	char	**sf;
-	size_t	len;
-	int		i;
+	struct spl	spl;
+	char		**sf;
 
 	if (!s)
 		return (NULL);
-	sf = (char **)malloc((wordC(s, c) + 1) * sizeof(char *));
+	sf = malloc((word_c(s, c) + 1) * sizeof(char *));
 	if (!sf)
 		return (NULL);
-	i = 0;
+	spl.i = 0;
 	while (*s)
 	{
 		while (*s == c && *s)
 			s++;
 		if (*s)
 		{
-			if (!strchr(s, c))
-				len = ft_strlen(s);
+			if (!ft_strchr(s, c))
+				spl.len = ft_strlen(s);
 			else
-				len = strchr(s, c) - s;
-			sf[i++] = ft_substr(s, 0, len);
-			s += len;
+				spl.len = ft_strchr(s, c) - s;
+			sf[spl.i++] = ft_substr(s, 0, spl.len);
+			s += spl.len;
 		}
 	}
-	sf[i] = NULL;
+	sf[spl.i] = NULL;
 	return (sf);
 }
 // int main(int argc, char const *argv[])

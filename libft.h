@@ -5,10 +5,15 @@
 #include <stdio.h>
 struct s_tmp
 {
-	size_t i;
-	size_t v;
-	size_t n2;
-	size_t n1;
+	size_t	i;
+	size_t	v;
+	size_t	n2;
+	size_t	n1;
+};
+struct spl
+{
+	size_t	i;
+	size_t	len;
 };
 size_t ft_strlen(const char *s);
 int ft_isascii(int c);
