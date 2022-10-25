@@ -1,31 +1,29 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_strdup.c                                        :+:      :+:    :+:   */
+/*   free_tabs.cpp                                      :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: mqaos <mqaos@student.42.fr>                +#+  +:+       +#+        */
+/*   By: trofidal <trofidal@student.42nice.fr>      +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2022/10/20 21:06:44 by mqaos             #+#    #+#             */
-/*   Updated: 2022/10/24 20:14:39 by mqaos            ###   ########.fr       */
+/*   Created: 2021/10/11 10:22:59 by trofidal          #+#    #+#             */
+/*   Updated: 2021/10/11 10:24:59 by trofidal         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "libft.h"
+#include "../includes/main_header.hpp"
 
-char	*ft_strdup(const char *s1)
-{
-	size_t	i;
-	char	*s11;
+void	free_tabs(char **tabs){
+	int	i = 0;
 
-	s11 = (char *)malloc(sizeof(char) * ft_strlen(s1)+1);
-	i = 0;
-	if (!s11)
-		return (NULL);
-	while (s1[i])
-	{
-		s11[i] = s1[i];
+	if (tabs == NULL)
+		return ;
+	if (!tabs)
+		return ;
+	while (tabs[i]){
+		free(tabs[i]);
+		tabs[i] = NULL;
 		i++;
 	}
-	s11[i] = '\0';
-	return (s11);
+	free(tabs);
+	tabs = NULL;
 }

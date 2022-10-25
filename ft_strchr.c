@@ -6,7 +6,7 @@
 /*   By: mqaos <mqaos@student.42.fr>                +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/10/19 15:14:25 by mqaos             #+#    #+#             */
-/*   Updated: 2022/10/21 15:34:03 by mqaos            ###   ########.fr       */
+/*   Updated: 2022/10/25 15:23:10 by mqaos            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -42,7 +42,7 @@ char	*ft_strchr(const char *s, int c)
 // {
 // 	char *s = "hello marouane hhh ";
 // 	char *r = "hello marouane hhh ";
-// 	printf("%s\n",strchr(s,0));
-// 	printf("%s",ft_strchr(r,0));
+// 	printf("%s\n",strchr(s,' '));
+// 	printf("%s",ft_strchr(r,' '));
 // 	return 0;
 // }
