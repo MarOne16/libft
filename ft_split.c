@@ -1,22 +1,22 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_splite.c                                        :+:      :+:    :+:   */
+/*   ft_split.c                                         :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: mqaos <mqaos@student.42.fr>                +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/10/24 14:42:55 by mqaos             #+#    #+#             */
-/*   Updated: 2022/10/25 18:30:10 by mqaos            ###   ########.fr       */
+/*   Updated: 2022/10/26 23:28:49 by mqaos            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "libft.h"
 
-size_t word_c(char const *s, char c)
+size_t	word_c(char const *s, char c)
 {
-	size_t nb;
-	int i;
-	int u;
+	size_t	nb;
+	int		i;
+	int		u;
 
 	nb = 0;
 	i = 0;

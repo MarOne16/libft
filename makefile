@@ -31,7 +31,8 @@ FILES = ft_memset \
 		ft_substr \
 		ft_joinstr \
 		ft_strtrim \
-		ft_splite \
+		ft_split \
+		ft_itoa \
 
 FILES_B = 	ft_lstnew \
 	  		ft_lstadd_front \
