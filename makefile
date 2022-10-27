@@ -29,10 +29,15 @@ FILES = ft_memset \
 		ft_tolower \
 		ft_calloc \
 		ft_substr \
-		ft_joinstr \
+		ft_strjoin \
 		ft_strtrim \
 		ft_split \
 		ft_itoa \
+		ft_strmapi \
+		ft_striteri \
+		ft_putchar_fd \
+		ft_putstr_fd \
+		ft_putnbr_fd \
 
 FILES_B = 	ft_lstnew \
 	  		ft_lstadd_front \

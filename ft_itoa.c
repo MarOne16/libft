@@ -6,7 +6,7 @@
 /*   By: mqaos <mqaos@student.42.fr>                +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/10/25 18:47:02 by mqaos             #+#    #+#             */
-/*   Updated: 2022/10/26 23:30:35 by mqaos            ###   ########.fr       */
+/*   Updated: 2022/10/27 18:09:01 by mqaos            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -50,11 +50,11 @@ char	*putnbr(int n)
 	int		x;
 	char	*b;
 
-	b = malloc(intlen(n) + 1);
+	b = (char *)malloc((intlen(n) + 1) * (sizeof(char)));
 	x = 0;
 	u = -1;
 	if (!b)
-		return (0);
+		return (NULL);
 	if (n < 0 && n > -2147483648)
 	{
 		n *= -1;
