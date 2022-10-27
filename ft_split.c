@@ -6,68 +6,78 @@
 /*   By: mqaos <mqaos@student.42.fr>                +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/10/24 14:42:55 by mqaos             #+#    #+#             */
-/*   Updated: 2022/10/26 23:28:49 by mqaos            ###   ########.fr       */
+/*   Updated: 2022/10/27 21:05:57 by mqaos            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "libft.h"
 
-size_t	word_c(char const *s, char c)
+static int	nb_c(char const *s, char c)
 {
-	size_t	nb;
-	int		i;
-	int		u;
+	int	i;
+	int	nb;
 
-	nb = 0;
 	i = 0;
-	u = 0;
-	while (s[u])
+	nb = 0;
+	while (s[i])
 	{
-		if (s[u] == c && i == 0)
+		if (s[i] != c)
 		{
-			i = 1;
 			nb++;
+			while (s[i] != c && s[i])
+				i++;
 		}
-		if (s[u + 1] != c)
-			i = 0;
-		u++;
+		else
+			i++;
 	}
 	return (nb);
 }
 
+static int	strlenword(char const *s, char c, int i)
+{
+	int	len;
+
+	len = 0;
+	while (s[i] != c && s[i])
+	{
+		len++;
+		i++;
+	}
+	return (len);
+}
+
+static void	ft_free(char **strs, int j)
+{
+	while (j-- > 0)
+		free(strs[j]);
+	free(strs);
+	return ;
+}
+
 char	**ft_split(char const *s, char c)
 {
-	struct spl	spl;
-	char		**sf;
+	char	**str;
+	int		i;
+	int		nb;
+	int		len;
+	int		j;
 
-	if (!s)
+	i = 0;
+	j = -1;
+	nb = nb_c(s, c);
+	str = (char **)malloc((nb + 1) * sizeof(char *));
+	if (!str)
 		return (NULL);
-	sf = malloc((word_c(s, c) + 1) * sizeof(char *));
-	if (!sf)
-		return (NULL);
-	spl.i = 0;
-	while (*s)
+	while (++j < nb)
 	{
-		while (*s == c && *s)
-			s++;
-		if (*s)
-		{
-			if (!ft_strchr(s, c))
-				spl.len = ft_strlen(s);
-			else
-				spl.len = ft_strchr(s, c) - s;
-			sf[spl.i++] = ft_substr(s, 0, spl.len);
-			s += spl.len;
-		}
+		while (s[i] == c)
+			i++;
+		len = strlenword(s, c, i);
+		str[j] = ft_substr(s, i, len);
+		if (!str[j])
+			ft_free(str, j);
+		i += len;
 	}
-	sf[spl.i] = NULL;
-	return (sf);
+	str[j] = 0;
+	return (str);
 }
-// int main(int argc, char const *argv[])
-// {
-//     char *h = "hello world gg kk";
-// 	char *j = "hello";
-//     int **r = ft_split(h,' ');
-//     printf("%ld",strchr(h,'d')-h);
-//     return 0;
-// }
