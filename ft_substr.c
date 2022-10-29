@@ -6,7 +6,7 @@
 /*   By: mqaos <mqaos@student.42.fr>                +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/10/22 14:56:46 by mqaos             #+#    #+#             */
-/*   Updated: 2022/10/25 17:46:31 by mqaos            ###   ########.fr       */
+/*   Updated: 2022/10/28 21:18:58 by mqaos            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -35,12 +35,3 @@ char	*ft_substr(char const *s, unsigned int start, size_t len)
 	r[i] = '\0';
 	return (r);
 }
-
-// int main()
-// {
-// 	char *str = "01234";
-// 	size_t size = 10;
-// 	char *ret = ft_substr(str, 10, size);
-// 	printf("%s",ret);
-// 	return 0;
-// }

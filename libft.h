@@ -13,11 +13,6 @@ struct s_tmp
 	size_t	n1;
 };
 
-struct s_spl
-{
-
-};
-
 size_t	ft_strlen(const char *s);
 int		ft_isascii(int c);
 int		ft_atoi(const char *str);
