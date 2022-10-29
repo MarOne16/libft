@@ -6,7 +6,7 @@
 /*   By: mqaos <mqaos@student.42.fr>                +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/10/20 20:56:59 by mqaos             #+#    #+#             */
-/*   Updated: 2022/10/29 12:28:30 by mqaos            ###   ########.fr       */
+/*   Updated: 2022/10/29 12:48:29 by mqaos            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -16,14 +16,19 @@ void	*ft_calloc(size_t count, size_t size)
 {
 	size_t			i;
 	size_t			max;
-	void			*cl;
+	unsigned char	*cl;
 
 	max = count * size;
 	cl = malloc(max);
-	i = -1;
+	i = 0;
 	if (!cl)
+	{
 		return (NULL);
-	while (++i < max)
-		ft_bzero(cl, i);
+	}
+	while (i < max)
+	{
+		cl[i] = '\0';
+		i++;
+	}
 	return (cl);
 }
