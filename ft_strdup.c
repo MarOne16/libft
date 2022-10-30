@@ -6,7 +6,7 @@
 /*   By: mqaos <mqaos@student.42.fr>                +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/10/20 21:06:44 by mqaos             #+#    #+#             */
-/*   Updated: 2022/10/24 20:14:39 by mqaos            ###   ########.fr       */
+/*   Updated: 2022/10/30 16:17:54 by mqaos            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -18,9 +18,9 @@ char	*ft_strdup(const char *s1)
 	char	*s11;
 
 	s11 = (char *)malloc(sizeof(char) * ft_strlen(s1)+1);
-	i = 0;
 	if (!s11)
 		return (NULL);
+	i = 0;
 	while (s1[i])
 	{
 		s11[i] = s1[i];

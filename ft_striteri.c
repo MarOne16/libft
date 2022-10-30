@@ -6,7 +6,7 @@
 /*   By: mqaos <mqaos@student.42.fr>                +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/10/27 15:16:27 by mqaos             #+#    #+#             */
-/*   Updated: 2022/10/27 15:31:36 by mqaos            ###   ########.fr       */
+/*   Updated: 2022/10/30 20:50:21 by mqaos            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -17,6 +17,8 @@ void	ft_striteri(char *s, void (*f)(unsigned int, char*))
 	unsigned int	i;
 
 	i = 0;
+	if (!s)
+		return ;
 	while (s[i])
 	{
 		(*f)(i, s + i);
