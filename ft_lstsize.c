@@ -1,22 +1,28 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_lstadd_front.c                                  :+:      :+:    :+:   */
+/*   ft_lstsize.c                                       :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: mqaos <mqaos@student.42.fr>                +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2022/10/29 21:35:23 by mqaos             #+#    #+#             */
-/*   Updated: 2022/10/31 21:41:13 by mqaos            ###   ########.fr       */
+/*   Created: 2022/10/31 16:48:40 by mqaos             #+#    #+#             */
+/*   Updated: 2022/10/31 21:34:43 by mqaos            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "libft.h"
 
-void	ft_lstadd_front(t_list **lst, t_list *new)
+int	ft_lstsize(t_list *lst)
 {
-	if (lst && new)
+	t_list	*st;
+	int		i;
+
+	st = lst;
+	i = 0;
+	while (st != NULL)
 	{
-		new -> next = *lst;
-		*lst = new;
+		st = st -> next;
+		i++;
 	}
+	return (i);
 }

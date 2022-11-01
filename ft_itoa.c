@@ -6,7 +6,7 @@
 /*   By: mqaos <mqaos@student.42.fr>                +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/10/25 18:47:02 by mqaos             #+#    #+#             */
-/*   Updated: 2022/10/29 21:27:29 by mqaos            ###   ########.fr       */
+/*   Updated: 2022/11/01 20:14:59 by mqaos            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -31,53 +31,57 @@ char	*ft_strrev(char *str)
 	return (str);
 }
 
-int	intlen(int n)
+size_t	intlen(int n)
 {
-	int	i;
+	size_t	i;
 
 	i = 0;
 	if (n < 0)
+	{
 		i = 1;
+		n *= -1;
+	}
 	while (n > 0)
 	{
-		n /= 10;
 		i++;
+		n /= 10;
 	}
 	return (i);
 }
 
-char	*putnbr(int n)
+char	*ft_put(long z, int x, int u, char *b)
+{
+	if (z < 0)
+	{
+		z *= -1;
+		x = 1;
+	}
+	while (z > 0)
+	{
+		b[++u] = (z % 10) + '0';
+		z /= 10;
+	}
+	if (x == 1)
+		b[++u] = '-';
+	b[++u] = 0x0;
+	return (ft_strrev(b));
+}
+
+char	*ft_itoa(int n)
 {
 	int		u;
 	int		x;
+	long	z;
 	char	*b;
 
 	b = (char *)malloc((intlen(n) + 1) * (sizeof(char)));
 	if (!b)
 		return (NULL);
+	z = n;
 	x = 0;
 	u = -1;
-	if (n < 0 && n > -2147483648)
-	{
-		n *= -1;
-		x = 1;
-	}
-	while (n > 0 && n <= 2147483647)
-	{
-		b[++u] = (n % 10) + '0';
-		n /= 10;
-	}
-	if (x == 1)
-		b[++u] = '-';
-	b[++u] = 0x0;
-	return (b);
-}
-
-char	*ft_itoa(int n)
-{
-	if (n == 0)
+	if (z == 0)
 		return (ft_strdup("0"));
-	if (n == -2147483648)
-		return (ft_strdup("-2147483648"));
-	return (ft_strrev(putnbr(n)));
+	else
+		return (ft_put(z, x, u, b));
 }
