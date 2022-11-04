@@ -1,26 +1,41 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_putchar_fd.c                                    :+:      :+:    :+:   */
+/*   ft_lstadd_back.c                                   :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: mqaos <mqaos@student.42.fr>                +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2022/10/27 15:56:45 by mqaos             #+#    #+#             */
-/*   Updated: 2022/11/04 11:51:03 by mqaos            ###   ########.fr       */
+/*   Created: 2022/11/02 17:04:50 by mqaos             #+#    #+#             */
+/*   Updated: 2022/11/03 19:20:46 by mqaos            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "libft.h"
-#include <fcntl.h>
 
-void	ft_putchar_fd(char c, int fd)
-{
-	write(fd, &c, 1);
-}
-
-// int main()
+// void	ft_lstadd_back(t_list **lst, t_list *new)
 // {
-// 	int fd = open("/Users/mqaos/Desktop/libft01-main/lolo.txt",O_WRONLY | O_CREAT);
-// 	ft_putchar_fd('k',fd);
-// 	return 0;
+// 	t_list	*lst2;
+
+// 	if (*lst == NULL)
+// 	{
+// 		*lst = new;
+// 	}
+// 	else
+// 	{
+// 		lst2 = ft_lstlast(*lst);
+// 		lst2 -> next = new;
+// 	}
 // }
+void	ft_lstadd_back(t_list **lst, t_list *new)
+{
+	t_list	*lst2;
+	if (*lst == NULL)
+	{
+		*lst = new;
+	}
+	else
+	{
+		lst2 = ft_lstlast(*lst);
+		lst2 ->next = new;
+	}
+}

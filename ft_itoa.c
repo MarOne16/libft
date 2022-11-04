@@ -6,7 +6,7 @@
 /*   By: mqaos <mqaos@student.42.fr>                +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/10/25 18:47:02 by mqaos             #+#    #+#             */
-/*   Updated: 2022/11/01 20:14:59 by mqaos            ###   ########.fr       */
+/*   Updated: 2022/11/01 20:54:20 by mqaos            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -41,6 +41,8 @@ size_t	intlen(int n)
 		i = 1;
 		n *= -1;
 	}
+	else if (n == 0)
+		i = 1;
 	while (n > 0)
 	{
 		i++;
@@ -81,7 +83,11 @@ char	*ft_itoa(int n)
 	x = 0;
 	u = -1;
 	if (z == 0)
-		return (ft_strdup("0"));
+	{
+		b[++u] = '0';
+		b[++u] = '\0';
+		return (b);
+	}
 	else
 		return (ft_put(z, x, u, b));
 }

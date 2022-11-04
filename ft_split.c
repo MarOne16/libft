@@ -6,7 +6,7 @@
 /*   By: mqaos <mqaos@student.42.fr>                +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/10/24 14:42:55 by mqaos             #+#    #+#             */
-/*   Updated: 2022/10/30 20:47:13 by mqaos            ###   ########.fr       */
+/*   Updated: 2022/11/02 12:02:35 by mqaos            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -58,17 +58,17 @@ char	**ft_split(char const *s, char c)
 {
 	char	**str;
 	int		i;
-	int		nb;
 	int		len;
 	int		j;
 
+	if (!s)
+		return (0x0);
 	i = 0;
 	j = -1;
-	nb = nb_c(s, c);
-	str = (char **)malloc((nb + 1) * sizeof(char *));
+	str = (char **)malloc((nb_c(s, c) + 1) * sizeof(char *));
 	if (!str)
 		return (NULL);
-	while (++j < nb)
+	while (++j < nb_c(s, c))
 	{
 		while (s[i] == c)
 			i++;

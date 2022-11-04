@@ -1,5 +1,4 @@
 NAME = libft.a
-
 CC = gcc
 CFLAGS = -Wall -Wextra -Werror
 AR = ar rcs
@@ -46,10 +45,6 @@ FILES_B = 	ft_lstnew \
 	  		ft_lstsize \
 	  		ft_lstlast \
 	  		ft_lstadd_back \
-	  		ft_lstdelone \
-	  		ft_lstclear \
-	  		ft_lstiter \
-	  		ft_lstmap
 
 SRCS_DIR = ./
 SRCS = $(addprefix $(SRCS_DIR), $(addsuffix .c, $(FILES)))
