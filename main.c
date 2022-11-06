@@ -1,33 +1,4 @@
-/* ************************************************************************** */
-/*                                                                            */
-/*                                                        :::      ::::::::   */
-/*   ft_lstadd_back.c                                   :+:      :+:    :+:   */
-/*                                                    +:+ +:+         +:+     */
-/*   By: mqaos <mqaos@student.42.fr>                +#+  +:+       +#+        */
-/*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2022/11/02 17:04:50 by mqaos             #+#    #+#             */
-/*   Updated: 2022/11/06 15:18:11 by mqaos            ###   ########.fr       */
-/*                                                                            */
-/* ************************************************************************** */
-
 #include "libft.h"
-
-void	ft_lstadd_back(t_list **lst, t_list *new)
-{
-	t_list	*lst2;
-
-	if (lst == 0)
-		return ;
-	if (*lst == NULL)
-	{
-		*lst = new;
-	}
-	else
-	{
-		lst2 = ft_lstlast(*lst);
-		lst2 -> next = new;
-	}
-}
 // void	ft_lstadd_back(t_list **lst, t_list *new)
 // {
 // 	t_list	*lst2;
@@ -64,10 +35,12 @@ void	ft_lstadd_back(t_list **lst, t_list *new)
 //     }
 //     new_node->next = NULL;
 //     new_node->x = value;
+    
 //     if (*root == NULL) {
 //         *root = new_node;
 //         return;
 //     }
+    
 //     Node* curr = *root;
 //     while (curr->next != NULL) {
 //         curr = curr->next;
@@ -89,3 +62,13 @@ void	ft_lstadd_back(t_list **lst, t_list *new)
 //     deallocate(&root);
 //     return 0;
 // }
+# include<stdlib.h>
+#include<stdio.h>
+
+int main(int argc, char const *argv[])
+{
+    char *ptr = malloc(10);
+    ptr = "hello";
+    while (1);
+    return 0;
+}

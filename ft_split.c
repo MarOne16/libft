@@ -6,13 +6,13 @@
 /*   By: mqaos <mqaos@student.42.fr>                +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/10/24 14:42:55 by mqaos             #+#    #+#             */
-/*   Updated: 2022/11/02 12:02:35 by mqaos            ###   ########.fr       */
+/*   Updated: 2022/11/06 16:27:12 by mqaos            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "libft.h"
 
-static int	nb_c(char const *s, char c)
+int	nb_c(char const *s, char c)
 {
 	int	i;
 	int	nb;
@@ -33,7 +33,7 @@ static int	nb_c(char const *s, char c)
 	return (nb);
 }
 
-static int	strlenword(char const *s, char c, int i)
+int	strlenword(char const *s, char c, int i)
 {
 	int	len;
 
@@ -46,9 +46,9 @@ static int	strlenword(char const *s, char c, int i)
 	return (len);
 }
 
-static void	ft_free(char **strs, int j)
+void	ft_free(char **strs, int j)
 {
-	while (j-- > 0)
+	while (j--)
 		free(strs[j]);
 	free(strs);
 	return ;
@@ -75,9 +75,18 @@ char	**ft_split(char const *s, char c)
 		len = strlenword(s, c, i);
 		str[j] = ft_substr(s, i, len);
 		if (!str[j])
-			ft_free(str, j);
+			ft_free(str, j + 1);
 		i += len;
 	}
 	str[j] = 0;
 	return (str);
 }
+// int main()
+// {
+// 	char **spl = ft_split("Hellof jkdfh khdfg kjgh", 'x');
+
+	// printf("%s\n%s",spl[0],spl[1]);
+	// char *ptr = malloc(10);
+	// ptr = malloc(10);
+// 	while(1);
+// }

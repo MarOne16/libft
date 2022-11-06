@@ -6,7 +6,7 @@
 /*   By: mqaos <mqaos@student.42.fr>                +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/10/18 11:19:52 by mqaos             #+#    #+#             */
-/*   Updated: 2022/10/21 19:46:50 by mqaos            ###   ########.fr       */
+/*   Updated: 2022/11/06 17:22:24 by mqaos            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -38,9 +38,9 @@ size_t	ft_strlcpy(char *dst, const char *src, size_t n)
 // 	#include<string.h>
 //     char r[5] = "bbbb";
 //     char z[5] = "aaaa";
-//     printf("%lu %s\n",strlcpy(r,z,-1),r);
+//     printf("%lu %s\n",strlcpy(r,z,3),r);
 //     char a[5] = "bbbb";
 //     char b[5] = "aaaa";
-//     printf("%lu %s",ft_strlcpy(a,b,-1),a);
+//     printf("%lu %s",ft_strlcpy(a,b,3),a);
 //     return 0;
 // }

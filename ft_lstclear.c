@@ -1,25 +1,33 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_lstnew.c                                        :+:      :+:    :+:   */
+/*   ft_lstclear.c                                      :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: mqaos <mqaos@student.42.fr>                +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2022/10/29 13:28:36 by mqaos             #+#    #+#             */
-/*   Updated: 2022/11/06 15:29:03 by mqaos            ###   ########.fr       */
+/*   Created: 2022/11/04 21:43:01 by mqaos             #+#    #+#             */
+/*   Updated: 2022/11/06 15:20:39 by mqaos            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "libft.h"
 
-t_list	*ft_lstnew(void *content)
+void	ft_lstclear(t_list **lst, void (*del)(void*))
 {
-	t_list	*node;
+	t_list	*current;
+	t_list	*next;
 
-	node = (t_list *)malloc(sizeof(*node));
-	if (!node)
-		return (NULL);
-	node -> content = content;
-	node -> next = NULL;
-	return (node);
+	if (!del)
+		return ;
+	if (lst)
+	{
+		current = *lst;
+		while (current)
+		{
+			next = current->next;
+			ft_lstdelone(current, (del));
+			current = next;
+		}
+		*lst = NULL;
+	}
 }

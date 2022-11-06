@@ -6,7 +6,7 @@
 /*   By: mqaos <mqaos@student.42.fr>                +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/10/17 18:12:47 by mqaos             #+#    #+#             */
-/*   Updated: 2022/10/21 17:25:52 by mqaos            ###   ########.fr       */
+/*   Updated: 2022/11/06 16:07:31 by mqaos            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -39,21 +39,11 @@ void	*ft_memmove(void *dst, const void *src, size_t n)
 	}
 	return (d);
 }
-
-// int main(int argc, char const *argv[])
+// #include<stdio.h>
+// int main()
 // {
-// 	int s[] = {9, 8, 7, 6, 5, 4, 3, 2};
-// 	ft_memmove(s + 2, s, sizeof(int) * 10);
-// 	for (size_t i = 0; i < 8; i++)
-// 	{
-// 		printf("%d\n", s[i]);
-// 	}
-// 	int d[] = {9, 8, 7, 6, 5, 4, 3, 2};
-// 	printf("next\n");
-// 	memmove(d + 2, d, sizeof(int) * 10);
-// 	for (size_t i = 0; i < 8; i++)
-// 	{
-// 		printf("%d\n", d[i]);
-// 	}
-// 	return 0;
+// 	char s[10]  = "123456789";
+// printf("%s",ft_memmove(s+4,s,5));
 // }
+//567896789
+//12345

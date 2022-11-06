@@ -6,7 +6,7 @@
 /*   By: mqaos <mqaos@student.42.fr>                +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/10/31 21:51:47 by mqaos             #+#    #+#             */
-/*   Updated: 2022/11/01 14:37:23 by mqaos            ###   ########.fr       */
+/*   Updated: 2022/11/05 16:28:13 by mqaos            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -25,3 +25,21 @@ t_list	*ft_lstlast(t_list *lst)
 	}
 	return (l);
 }
+// #include<stdio.h>
+// int main(int argc, char const *argv[])
+// {
+//     t_list *n1;
+//     t_list *n2;
+//     t_list *n3;
+//     n1 =(t_list *)malloc(sizeof(t_list));
+//     n2 =(t_list *)malloc(sizeof(t_list));
+//     n3 =(t_list *)malloc(sizeof(t_list));
+//     n1->next = n2;
+//     n2->next = n3;
+//     n3->next = 0;
+//     n1 -> content ="1";
+//     n2 -> content ="2";
+//     n3 -> content ="3";
+// 	printf("%s",ft_lstlast(n1)->content);
+// 	return 0;
+// }
