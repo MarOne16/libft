@@ -6,7 +6,7 @@
 /*   By: mqaos <mqaos@student.42.fr>                +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/10/19 18:35:20 by mqaos             #+#    #+#             */
-/*   Updated: 2022/11/04 15:27:30 by mqaos            ###   ########.fr       */
+/*   Updated: 2022/11/10 14:09:03 by mqaos            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -20,8 +20,6 @@ char	*ft_strnstr(const char *h, const char *n, size_t len)
 
 	h1 = (char *)h;
 	i = 0;
-	if ((h == NULL && len == 0))
-		return (0);
 	if (n[0] == '\0')
 		return (h1);
 	while (h1[i])

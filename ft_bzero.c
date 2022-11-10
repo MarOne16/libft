@@ -6,7 +6,7 @@
 /*   By: mqaos <mqaos@student.42.fr>                +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/10/17 00:28:15 by mqaos             #+#    #+#             */
-/*   Updated: 2022/10/21 15:32:56 by mqaos            ###   ########.fr       */
+/*   Updated: 2022/11/09 21:06:55 by mqaos            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -14,9 +14,9 @@
 
 void	ft_bzero(void *s, size_t n)
 {
-	unsigned char	*y;
+	char	*y;
 
-	y = (unsigned char *)s;
+	y = (char *)s;
 	while (n > 0)
 	{
 		*y = 0;

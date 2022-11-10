@@ -6,13 +6,13 @@
 /*   By: mqaos <mqaos@student.42.fr>                +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/10/25 18:47:02 by mqaos             #+#    #+#             */
-/*   Updated: 2022/11/01 20:54:20 by mqaos            ###   ########.fr       */
+/*   Updated: 2022/11/09 16:49:23 by mqaos            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "libft.h"
 
-char	*ft_strrev(char *str)
+static char	*ft_strrev(char *str)
 {
 	char	tmp;
 	int		i;
@@ -31,7 +31,7 @@ char	*ft_strrev(char *str)
 	return (str);
 }
 
-size_t	intlen(int n)
+static size_t	intlen(long long n)
 {
 	size_t	i;
 
@@ -51,7 +51,7 @@ size_t	intlen(int n)
 	return (i);
 }
 
-char	*ft_put(long z, int x, int u, char *b)
+static char	*ft_put(long long z, int x, int u, char *b)
 {
 	if (z < 0)
 	{
@@ -71,15 +71,15 @@ char	*ft_put(long z, int x, int u, char *b)
 
 char	*ft_itoa(int n)
 {
-	int		u;
-	int		x;
-	long	z;
-	char	*b;
+	int			u;
+	int			x;
+	long long	z;
+	char		*b;
 
-	b = (char *)malloc((intlen(n) + 1) * (sizeof(char)));
+	z = n;
+	b = (char *)malloc((intlen(z) + 1) * (sizeof(char)));
 	if (!b)
 		return (NULL);
-	z = n;
 	x = 0;
 	u = -1;
 	if (z == 0)

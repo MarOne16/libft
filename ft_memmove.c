@@ -6,7 +6,7 @@
 /*   By: mqaos <mqaos@student.42.fr>                +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/10/17 18:12:47 by mqaos             #+#    #+#             */
-/*   Updated: 2022/11/06 16:07:31 by mqaos            ###   ########.fr       */
+/*   Updated: 2022/11/09 13:33:38 by mqaos            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -14,13 +14,13 @@
 
 void	*ft_memmove(void *dst, const void *src, size_t n)
 {
-	unsigned char	*d;
-	unsigned char	*s;
-	size_t			i;
+	char	*d;
+	char	*s;
+	size_t	i;
 
 	i = 0;
-	d = (unsigned char *)dst;
-	s = (unsigned char *)src;
+	d = (char *)dst;
+	s = (char *)src;
 	if (!d && !s)
 		return (NULL);
 	if (d < s)
@@ -39,11 +39,3 @@ void	*ft_memmove(void *dst, const void *src, size_t n)
 	}
 	return (d);
 }
-// #include<stdio.h>
-// int main()
-// {
-// 	char s[10]  = "123456789";
-// printf("%s",ft_memmove(s+4,s,5));
-// }
-//567896789
-//12345

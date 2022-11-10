@@ -6,13 +6,13 @@
 /*   By: mqaos <mqaos@student.42.fr>                +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/10/24 14:42:55 by mqaos             #+#    #+#             */
-/*   Updated: 2022/11/06 16:27:12 by mqaos            ###   ########.fr       */
+/*   Updated: 2022/11/10 15:12:52 by mqaos            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "libft.h"
 
-int	nb_c(char const *s, char c)
+static int	nb_c(char const *s, char c)
 {
 	int	i;
 	int	nb;
@@ -33,7 +33,7 @@ int	nb_c(char const *s, char c)
 	return (nb);
 }
 
-int	strlenword(char const *s, char c, int i)
+static int	strlenword(char const *s, char c, int i)
 {
 	int	len;
 
@@ -46,7 +46,7 @@ int	strlenword(char const *s, char c, int i)
 	return (len);
 }
 
-void	ft_free(char **strs, int j)
+static void	ft_free(char **strs, int j)
 {
 	while (j--)
 		free(strs[j]);
@@ -58,7 +58,6 @@ char	**ft_split(char const *s, char c)
 {
 	char	**str;
 	int		i;
-	int		len;
 	int		j;
 
 	if (!s)
@@ -72,21 +71,14 @@ char	**ft_split(char const *s, char c)
 	{
 		while (s[i] == c)
 			i++;
-		len = strlenword(s, c, i);
-		str[j] = ft_substr(s, i, len);
+		str[j] = ft_substr(s, i, strlenword(s, c, i));
 		if (!str[j])
+		{
 			ft_free(str, j + 1);
-		i += len;
+			return (0);
+		}
+		i += strlenword(s, c, i);
 	}
 	str[j] = 0;
 	return (str);
 }
-// int main()
-// {
-// 	char **spl = ft_split("Hellof jkdfh khdfg kjgh", 'x');
-
-	// printf("%s\n%s",spl[0],spl[1]);
-	// char *ptr = malloc(10);
-	// ptr = malloc(10);
-// 	while(1);
-// }

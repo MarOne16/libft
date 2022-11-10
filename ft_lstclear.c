@@ -6,7 +6,7 @@
 /*   By: mqaos <mqaos@student.42.fr>                +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/11/04 21:43:01 by mqaos             #+#    #+#             */
-/*   Updated: 2022/11/06 15:20:39 by mqaos            ###   ########.fr       */
+/*   Updated: 2022/11/07 18:58:16 by mqaos            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -19,15 +19,12 @@ void	ft_lstclear(t_list **lst, void (*del)(void*))
 
 	if (!del)
 		return ;
-	if (lst)
+	current = *lst;
+	while (current)
 	{
-		current = *lst;
-		while (current)
-		{
-			next = current->next;
-			ft_lstdelone(current, (del));
-			current = next;
-		}
-		*lst = NULL;
+		next = current->next;
+		ft_lstdelone(current, (del));
+		current = next;
 	}
+	*lst = NULL;
 }

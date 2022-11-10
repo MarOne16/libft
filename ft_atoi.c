@@ -6,7 +6,7 @@
 /*   By: mqaos <mqaos@student.42.fr>                +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/10/19 21:05:20 by mqaos             #+#    #+#             */
-/*   Updated: 2022/10/21 15:32:45 by mqaos            ###   ########.fr       */
+/*   Updated: 2022/11/07 15:40:07 by mqaos            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -14,9 +14,9 @@
 
 int	ft_atoi(const char *str)
 {
-	int	x;
-	int	z;
-	int	i;
+	int				x;
+	unsigned int	z;
+	int				i;
 
 	x = 1;
 	z = 0;

@@ -6,7 +6,7 @@
 /*   By: mqaos <mqaos@student.42.fr>                +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/10/22 19:53:37 by mqaos             #+#    #+#             */
-/*   Updated: 2022/10/23 20:31:05 by mqaos            ###   ########.fr       */
+/*   Updated: 2022/11/09 17:15:09 by mqaos            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -27,7 +27,16 @@ char	*ft_strtrim(char const *s1, char const *set)
 	while (s1[u - 1] && ft_strchr(set, s1[u - 1]) && u > i)
 		u--;
 	s2 = (char *)malloc(sizeof(char) * (u + 1 - i));
-	if (s2)
+	if (!s2)
+		return (0x0);
+	else
 		ft_strlcpy(s2, s1 + i, u - i + 1);
 	return (s2);
 }
+// #include <stdio.h>
+// int main()
+// {
+// 	char *r = ft_strtrim("are hello marouane are you good","are");
+// 	printf("%s",r);
+// 	return 0;
+// }
